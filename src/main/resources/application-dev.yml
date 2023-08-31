@@ -5,9 +5,9 @@ server:
 ## CONFIGURACIÓN DE DATASOURCE
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/proyecto_ingenieria?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://vps.simix.tech:55462/proyecto_ingenieria?useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: admin
+    password: 1234pablo
 
   jpa:
     show-sql: true

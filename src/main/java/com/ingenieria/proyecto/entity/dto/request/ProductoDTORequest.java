@@ -1,10 +1,12 @@
-package com.ingenieria.proyecto.entity.dto;
+package com.ingenieria.proyecto.entity.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -12,10 +14,16 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductoDTO implements Serializable {
-    private String codigo;
+public class ProductoDTORequest implements Serializable {
+    @NotBlank(message = "No debe estar vacío!")
     private String nombre;
+
+    @NotNull
     private BigDecimal precio_unitario;
+
+    @NotNull
     private Integer cantidad;
+
+    @NotBlank(message = "No debe estar vacío!")
     private String descripcion;
 }

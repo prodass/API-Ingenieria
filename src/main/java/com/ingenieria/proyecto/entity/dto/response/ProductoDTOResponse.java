@@ -1,4 +1,4 @@
-package com.ingenieria.proyecto.entity.dto;
+package com.ingenieria.proyecto.entity.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,8 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductoDTOReq implements Serializable {
+public class ProductoDTOResponse implements Serializable {
+    private String codigo;
     private String nombre;
     private BigDecimal precio_unitario;
     private Integer cantidad;

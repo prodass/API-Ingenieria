@@ -14,7 +14,9 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestControllerAdvice
 public class EntityExceptionHandler extends ResponseEntityExceptionHandler {
@@ -33,10 +35,15 @@ public class EntityExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(EntityNotFoundException.class)
 	protected ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex) {
-		ErrorDTO sysceError = new ErrorDTO(HttpStatus.NOT_FOUND,
+		/*ErrorDTO sysceError = new ErrorDTO(HttpStatus.NOT_FOUND,
 				GenericConstant.PREFIX_CLIENT_ERROR + GenericConstant.NOT_FOUND);
 		sysceError.setMessage(ex.getMessage());
-		return buildResponseEntity(sysceError);
+		return buildResponseEntity(sysceError);*/
+
+		Map<String, String> error = new HashMap<>();
+		error.put(ex.getMessage().split(":")[0], ex.getMessage().split(":")[1]);
+
+		return ResponseEntity.badRequest().body(error);
 	}
 
 	@ExceptionHandler(EntityUnprocessableException.class)

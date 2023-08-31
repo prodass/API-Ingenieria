@@ -47,6 +47,6 @@ public class GenericConstant {
     public static final String RESOURCE_GENERIC_ID = "/{id}";
 
     public static final String RESOURCE_PRODUCTOS = "/productos";
-    public static final String RESOURCE_PRODUCTOS_SEARCH = RESOURCE_PRODUCTOS + "/{codigo}";
+    public static final String RESOURCE_PRODUCTOS_CODIGO = RESOURCE_PRODUCTOS + "/{codigo}";
 
 }
